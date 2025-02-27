@@ -78,8 +78,7 @@ class Manager:
         print(f"Tamaño estimado: {total_size_gb:.6f} GB")
         print(f"Tiempo estimado: {estimated_time:.1f} segundos")
 
-        if total_size_gb > 1:
-            if (
+        if total_size_gb > 1 and (
                 input("El sistema ocupará más de 1GB. ¿Continuar? (s/n): ").lower()
                 != "s"
             ):
