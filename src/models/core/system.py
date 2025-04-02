@@ -9,6 +9,8 @@ from src.models.base.application import aplicacion
 
 from src.constants.base import COLS_IDX
 
+from memory_profiler import profile
+
 
 class System:
     """
@@ -62,7 +64,8 @@ class System:
             - `np.ndarray`: El arreglo con las dimensiones únicas de los n-cubos del sistema a cualquier nivel, idealmente superior a una partición.
         """
         return self.ncubos[0].dims if len(self.ncubos) > 0 else np.array([])
-
+    
+    
     def condicionar(self, indices: NDArray[np.int8]) -> "System":
         """
         A partir de un sistema origina, esta operación se aplica para todo n-cubo, también llamada como aplicar condiciones de fondo, hace que este se vea seleccionado el cubo en su totalidad, pero delimitando en las dimensiones o indices especificados para hacer selección según el estado inicial asociado.

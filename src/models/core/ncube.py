@@ -14,7 +14,7 @@ class NCube:
 
     indice: int
     dims: NDArray[np.int8]
-    data: np.ndarray
+    data: NDArray[np.float32]
 
     def __post_init__(self):
         """Validación de tamaño y dimensionalidad tras inicialización.
@@ -22,6 +22,9 @@ class NCube:
         Raises:
             ValueError: Se valida que hayan dimensiones y cumpla con las dimensiones de un cubo n-dimensional.
         """
+        if self.data.dtype != np.float32:
+            object.__setattr__(self, 'data', self.data.astype(np.float32))
+            
         if self.dims.size and self.data.shape != (2,) * self.dims.size:
             raise ValueError(
                 f"Forma inválida {self.data.shape} para dimensiones {self.dims}"

@@ -59,11 +59,8 @@ class Manager:
             dimensiones (int): Número de nodos/elementos/variables/canales que se desea maneje la red, obteniendo un Sistema que para cada estado en $(t)$ tendrá un canalen $(t+1)$.
             datos_discretos (bool, optional): Selecciona si se quiere que la red generada sea no determinista, con el valor de probabilidad como siempre, un real positivo entre 0 y 1 inclusivo. Por defecto es True.
 
-        Raises:
-            ValueError: _description_
-
         Returns:
-            str: _description_
+            str: Nombre del archivo generado
         """
         np.random.seed(aplicacion.semilla_numpy)
 
@@ -107,11 +104,13 @@ class Manager:
         start_time = time.time()
 
         if datos_discretos:
-            states = np.random.randint(
+            states = np.random.Generator(
                 2, size=(num_estados, dimensiones), dtype=np.int8
             )
         else:
-            states = np.random.random(size=(num_estados, dimensiones))
+            states = np.random.Generator(
+                size=(num_estados, dimensiones), dtype=np.float32
+            )
 
         print(f"Generación completada en {time.time() - start_time:.2f} segundos")
 

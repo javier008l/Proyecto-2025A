@@ -60,7 +60,7 @@ def emd_efecto(u: NDArray[np.float32], v: NDArray[np.float32]) -> float:
     return np.sum(np.abs(u - v))
 
 
-def emd_causal(u: NDArray[np.float64], v: NDArray[np.float64]) -> float:
+def emd_causal(u: NDArray[np.float32], v: NDArray[np.float32]) -> float:
     """
     Calculate the Earth Mover's Distance (EMD) between two probability distributions u and v.
     The Hamming distance was used as the ground metric.
@@ -69,7 +69,7 @@ def emd_causal(u: NDArray[np.float64], v: NDArray[np.float64]) -> float:
         raise TypeError("u and v must be numpy arrays.")
 
     n: int = u.size
-    costs: NDArray[np.float64] = np.empty((n, n))
+    costs: NDArray[np.float32] = np.empty((n, n), dtype=np.float32)
 
     for i in range(n):
         # Utiliza comprensión de listas para calcular los costos
@@ -77,8 +77,8 @@ def emd_causal(u: NDArray[np.float64], v: NDArray[np.float64]) -> float:
         costs[:i, i] = costs[i, :i]  # Reflejar los valores
     np.fill_diagonal(costs, INT_ZERO)
 
-    cost_mat: NDArray[np.float64] = np.array(costs, dtype=np.float64)
-    return emd(u, v, cost_mat)
+    cost_mat: NDArray[np.float32] = costs
+    return float(emd(u.astype(np.float64), v.astype(np.float64), cost_mat.astype(np.float64)))  # pyemd requiere float64
 
 
 def hamming_distance(a: int, b: int) -> int:
@@ -113,7 +113,7 @@ def lil_endian(n: int) -> np.ndarray:
         return np.array([0], dtype=np.uint32)  # Caso especial para n=0
 
     size = 1 << n
-    result = np.zeros(size, dtype=np.uint32)
+    result = np.zeros(size, dtype=np.uint16)
 
     # Optimización de parámetros basada en n
     block_bits = max(12, min(16, 28 - int(np.log2(n))))

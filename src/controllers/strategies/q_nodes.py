@@ -23,6 +23,7 @@ from src.constants.base import (
     EFECTO,
     ACTUAL,
 )
+#from memory_profiler import profile
 
 
 class QNodes(SIA):
@@ -116,6 +117,7 @@ class QNodes(SIA):
 
         self.logger = SafeLogger(QNODES_STRAREGY_TAG)
 
+    
     @profile(context={TYPE_TAG: QNODES_ANALYSIS_TAG})
     def aplicar_estrategia(
         self,
