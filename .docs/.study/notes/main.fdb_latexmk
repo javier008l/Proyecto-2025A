@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1744557054.78625 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1744656030.19495 0
   "bibliography.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1744557046.98806 "c:/Users/overd/Links/Academia/Algorithms/Code/2025-I/.docs/.study/notes/main.tex" "main.pdf" "main" 1744557054.7874 0
+["pdflatex"] 1744656017.29548 "c:/Users/overd/Links/Academia/Algorithms/Code/2025-I/.docs/.study/notes/main.tex" "main.pdf" "main" 1744656030.19614 0
   "C:/Users/overd/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1744555975 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/overd/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1744554990 12036089 c63e8bfd8d93bfbdea082b5fbaca204e ""
   "C:/Users/overd/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -292,13 +292,13 @@
   "Pictures/galaxy.png" 1744555501 5396744 095e2ac068f123c0e41d7a1ab1f650ec ""
   "Pictures/greedy_algorithms.png" 1744556626 433736 1c4d9bf2e167fc501482ac1bed12f38d ""
   "Pictures/recurrence_equations.png" 1744556926 314125 b122c56e2e4f61792cdd10ac3e16c59b ""
-  "c:/Users/overd/Links/Academia/Algorithms/Code/2025-I/.docs/.study/notes/main.tex" 1744557046 126984 ae23cf7fae3773fea8856c4ea066cfa7 ""
-  "main.aux" 1744557053 25483 c4249e98480cae5ed7f065c0fc65581d "pdflatex"
+  "c:/Users/overd/Links/Academia/Algorithms/Code/2025-I/.docs/.study/notes/main.tex" 1744656016 126984 ae23cf7fae3773fea8856c4ea066cfa7 ""
+  "main.aux" 1744656025 25483 c4249e98480cae5ed7f065c0fc65581d "pdflatex"
   "main.bbl" 0 -1 0 "biber main"
-  "main.out" 1744557053 12991 6e1cdc403b79e518006ee8f718f12b52 "pdflatex"
-  "main.run.xml" 1744557053 2313 c3de95179eb685e856fe8a0e2628e11a "pdflatex"
-  "main.tex" 1744557046 126984 ae23cf7fae3773fea8856c4ea066cfa7 ""
-  "main.toc" 1744557053 9822 f68bef01e7ebcb53b48a70c2d91a9744 "pdflatex"
+  "main.out" 1744656025 12991 6e1cdc403b79e518006ee8f718f12b52 "pdflatex"
+  "main.run.xml" 1744656025 2313 c3de95179eb685e856fe8a0e2628e11a "pdflatex"
+  "main.tex" 1744656016 126984 ae23cf7fae3773fea8856c4ea066cfa7 ""
+  "main.toc" 1744656025 9822 f68bef01e7ebcb53b48a70c2d91a9744 "pdflatex"
   "structure.tex" 1744555624 14727 5c2142627ff0cdbf4c79b75c3362c38c ""
   (generated)
   "main.aux"

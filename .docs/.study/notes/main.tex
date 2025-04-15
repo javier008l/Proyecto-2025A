@@ -255,7 +255,7 @@ Un algoritmo $\alpha$ clasifica sí y solo si tiene
 
 \begin{example}
     Demostración que $0.5n^2-3n=\Theta(n^2)$
-    
+
     Ha de satisfacerse que $c_1n^2\le 0.5n^2-3n\le c_2n^2$
     $$
         c_1n^2\le 0.5n^2-3n\le c_2n^2
@@ -282,14 +282,14 @@ Son las funciones $o(g(n))$ que crecen más lento que $g$.
 
 \begin{proof}
     Es $n=o(n^2)$
-    
+
     Ha de satisfacerse que: $$
         \lim_{n\to\infty}\frac n{n^2}=\lim_{n\to\infty}\frac 1{n}=0
     $$
 \end{proof}
 \begin{proof}
     Es $n\neq o(3n)$
-    
+
     Ha de satisfacerse que: $$
         \lim_{n\to\infty}\frac n{3n}=\lim_{n\to\infty}\frac 13=\frac 13\neq0
     $$
@@ -304,7 +304,7 @@ $$$$
     \lim_{n\to\infty}\frac{g(n)}{f(n)}= 0
 $$
 \end{definition}
-Las funciones $\omega({g(n)})$ crecen más rápido que $g$. 
+Las funciones $\omega({g(n)})$ crecen más rápido que $g$.
 \begin{remark}Dicción en 'Little omega':
 
     '$f$ es asintóticamente más grande a $g$'. '$g$ es cota débil inferior a $f$'.
