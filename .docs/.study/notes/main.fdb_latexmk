@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1744684061.07272 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1744690618.6182 0
   "bibliography.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1744684053.28962 "c:/Users/overd/Links/Academia/Algorithms/Code/2025-I/.docs/.study/notes/main.tex" "main.pdf" "main" 1744684061.07462 0
+["pdflatex"] 1744690611.72235 "c:/Users/overd/Links/Academia/Algorithms/Code/2025-I/.docs/.study/notes/main.tex" "main.pdf" "main" 1744690618.61925 0
   "C:/Users/overd/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1744683839 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/overd/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1744554990 12036089 c63e8bfd8d93bfbdea082b5fbaca204e ""
   "C:/Users/overd/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -286,19 +286,28 @@
   "C:/Users/overd/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
   "Pictures/algorithmic_analysis.png" 1744556819 415011 47a5fe2e826ce314b3b0562c292199d1 ""
   "Pictures/asymptotic_notation.png" 1744555485 328926 201db10c0ceca8341b4dc6193e00ce1f ""
+  "Pictures/backtracking.png" 1744555501 5396744 095e2ac068f123c0e41d7a1ab1f650ec ""
   "Pictures/bg_title.png" 1744555450 13121399 71ea99188660f8f9399479c6902ebdfe ""
   "Pictures/divide_n_conquer.png" 1744556857 396520 3d43d73c52cc61f182a8fc7b5b2f44a6 ""
   "Pictures/dynamic_programming.png" 1744556690 338848 24b2f196f68c7ecb139cc535a055130b ""
   "Pictures/galaxy.png" 1744555501 5396744 095e2ac068f123c0e41d7a1ab1f650ec ""
   "Pictures/greedy_algorithms.png" 1744556626 433736 1c4d9bf2e167fc501482ac1bed12f38d ""
-  "Pictures/recurrence_equations.png" 1744556926 314125 b122c56e2e4f61792cdd10ac3e16c59b ""
-  "c:/Users/overd/Links/Academia/Algorithms/Code/2025-I/.docs/.study/notes/main.tex" 1744684039 122856 3f0dbc1613aab3aff61b5a333a104dfc ""
-  "main.aux" 1744684059 25483 c4249e98480cae5ed7f065c0fc65581d "pdflatex"
+  "Pictures/heuristics.png" 1744555501 5396744 095e2ac068f123c0e41d7a1ab1f650ec ""
+  "c:/Users/overd/Links/Academia/Algorithms/Code/2025-I/.docs/.study/notes/main.tex" 1744690003 7456 d17605500e9c81a3239c65c69cab364e ""
+  "chapters/analisis.tex" 1744689831 15820 d7739b57f8248bfb1bf64fb71e9b9516 ""
+  "chapters/heuristicos.tex" 1744687611 15203 9883e9b088038052bd9e8819a0c4e713 ""
+  "chapters/notaciones.tex" 1744687292 13341 65451b8142daeced7b0e4b7f82967ee0 ""
+  "chapters/pdinamica.tex" 1744687526 25365 014e7da6777165624dcbc0a7696b8a2a ""
+  "chapters/ramificacion.tex" 1744687559 7864 eb29e31a08fae5fc075f6ab3bdfb6f49 ""
+  "chapters/retroceso.tex" 1744687625 7789 f5cf995a03ee5f50ee5c21dbebc59afa ""
+  "chapters/vencer.tex" 1744690611 12942 099e4f8c5bb09291e2da1fcd7b90ebaa ""
+  "chapters/voraces.tex" 1744687201 3652 29e0936f0f9c3674d04524a5d6b30c6a ""
+  "main.aux" 1744690617 22317 ba3a6aa3b25a88e59649522a6225d3d0 "pdflatex"
   "main.bbl" 0 -1 0 "biber main"
-  "main.out" 1744684059 12991 6e1cdc403b79e518006ee8f718f12b52 "pdflatex"
-  "main.run.xml" 1744684060 2313 c3de95179eb685e856fe8a0e2628e11a "pdflatex"
-  "main.tex" 1744684039 122856 3f0dbc1613aab3aff61b5a333a104dfc ""
-  "main.toc" 1744684060 9822 f68bef01e7ebcb53b48a70c2d91a9744 "pdflatex"
+  "main.out" 1744690617 11239 1346804f11c7c3433d77cb058890db81 "pdflatex"
+  "main.run.xml" 1744690617 2313 c3de95179eb685e856fe8a0e2628e11a "pdflatex"
+  "main.tex" 1744690003 7456 d17605500e9c81a3239c65c69cab364e ""
+  "main.toc" 1744690617 8351 edafbfe584d4ebe52716638befb9267b "pdflatex"
   "structure.tex" 1744555624 14727 5c2142627ff0cdbf4c79b75c3362c38c ""
   (generated)
   "main.aux"
