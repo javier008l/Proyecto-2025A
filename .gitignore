@@ -204,3 +204,7 @@ src/testing/
 # Videos
 ./src/video/**
 src/video/**
+
+# Others
+**/qp_nodes.py
+src/controllers/strategies/qp_nodes.py
