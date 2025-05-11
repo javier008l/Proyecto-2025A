@@ -203,3 +203,4 @@ src/testing/
 
 **/geometry.py
 **\geometry.py
+src/**/geometry.py
