@@ -200,3 +200,6 @@ src\tests\**
 \src\tests\**
 src\tests\redes.py
 src/testing/
+
+**/geometry.py
+**\geometry.py
