@@ -1,38 +1,24 @@
 from src.controllers.manager import Manager
 
-from src.controllers.strategies.geometry import Geometry
-from src.controllers.strategies.q_nodes import QNodes
-from src.controllers.strategies.phi import Phi
+from src.controllers.strategies.force import BruteForce
 
 
 def iniciar():
     """Punto de entrada principal"""
-    # ABCDEFGHIJ #
-    estado_inicial = "0000"
-    condiciones =    "1111"
-    alcance =        "1111"
-    mecanismo =      "1111"
+                    # ABCD #
+    estado_inicial = "1000"
+    condiciones =    "1110"
+    alcance =        "1110"
+    mecanismo =      "1110"
 
     gestor_sistema = Manager(estado_inicial)
 
     ### Ejemplo de solución mediante módulo de fuerza bruta ###
-    analizador_geo = Geometry(gestor_sistema)
-    analizador_qn = QNodes(gestor_sistema)
-    analizador_phi = Phi(gestor_sistema)
+    analizador_geo = BruteForce(gestor_sistema)
 
     sia_cero = analizador_geo.aplicar_estrategia(
         condiciones,
         alcance,
         mecanismo,
     )
-    # sia_uno = analizador_qn.aplicar_estrategia(
-    #     condiciones,
-    #     alcance,
-    #     mecanismo,
-    # )
-    # sia_dos = analizador_phi.aplicar_estrategia(
-    #     condiciones,
-    #     alcance,
-    #     mecanismo,
-    # )
-    # print(sia_uno, sia_dos, sia_cero)
+    print(sia_cero)

@@ -1,3 +1,8 @@
+# Hidden-Strategies
+**\strategies\geometry.py
+**/strategies/geometry.py
+**\geometry.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

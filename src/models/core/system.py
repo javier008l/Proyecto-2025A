@@ -245,7 +245,7 @@ class System:
         )
         return new_sys
 
-    def distribucion_marginal(self, sistema_en_on: bool = True):
+    def distribucion_marginal(self, sistema_activo: bool = True):
         """
         Partiendo de idealmente un subsistema o una bipartición como entrada, se seleccionana los nodos/elementos cuando su estado es OFF o inactivo para cada uno de ellos, mediante la propiedad de las distribuciones marginales, esto nos permite calcular más eficientemente la EMD-Effect, logrando así determinar un coste para dar comparación entre idealmente, un sub-sistema y una bipartición. Hemos de aplicar una reversión en la selección del estado inicial puesto se está trabajando con el dataset original.
 
@@ -260,7 +260,7 @@ class System:
             if ncubo.dims.size:
                 sub_estado_inicial = tuple(self.estado_inicial[j] for j in ncubo.dims)
                 probabilidad = ncubo.data[seleccionar_subestado(sub_estado_inicial)]
-            distribuciones[i] = abs(sistema_en_on - probabilidad)
+            distribuciones[i] = abs(sistema_activo - probabilidad)
         return distribuciones
 
     def __str__(self) -> str:

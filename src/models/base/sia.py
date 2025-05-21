@@ -67,6 +67,7 @@ class SIA(ABC):
         condicion: str,
         alcance: str,
         mecanismo: str,
+        sistema_activo: bool = True,
     ):
         """Es en este método donde dada la entrada del usuario, vamos a generar un sistema completo, aplicamos condiciones de fondo (background conditions), loe substraemos partes para dejar un subsistema y es este el que retornamos pues este es el mínimo "sistema" útil para poder encontrar la bipartición que le genere la menor pérdida.
 
@@ -95,7 +96,7 @@ class SIA(ABC):
         self.sia_gestor.output_dir.mkdir(parents=True, exist_ok=True)
 
         # Cargar y preparar datos
-        tpm = self.sia_cargar_tpm(sistema_activo=False)
+        tpm = self.sia_cargar_tpm(sistema_activo)
         estado_inicial = np.array(
             [canal for canal in self.sia_gestor.estado_inicial], dtype=np.int8
         )
@@ -118,7 +119,7 @@ class SIA(ABC):
         self.sia_logger.debug(subsistema)
 
         self.sia_subsistema = subsistema
-        self.sia_dists_marginales = subsistema.distribucion_marginal()
+        self.sia_dists_marginales = subsistema.distribucion_marginal(sistema_activo)
         self.sia_tiempo_inicio = time.time()
 
     def chequear_parametros(self, candidato: str, futuro: str, presente: str):
