@@ -153,12 +153,13 @@ class QNodes(SIA):
         mip = self.algorithm(vertices)
 
         fmt_mip = fmt_biparte_q(list(mip), self.nodes_complement(mip))
+        perdida_mip, dist_marginal_mip = self.memoria_particiones[mip]
 
         return Solution(
             estrategia=QNODES_LABEL,
-            perdida=self.memoria_particiones[mip][0],
+            perdida=perdida_mip,
             distribucion_subsistema=self.sia_dists_marginales,
-            distribucion_particion=self.memoria_particiones[mip][1],
+            distribucion_particion=dist_marginal_mip,
             tiempo_total=time.time() - self.sia_tiempo_inicio,
             particion=fmt_mip,
         )
@@ -367,7 +368,7 @@ class QNodes(SIA):
         )
         vector_union_marginal = particion_union.distribucion_marginal()
         emd_union = emd_efecto(vector_union_marginal, self.sia_dists_marginales)
-
+ 
         return emd_union, emd_delta, vector_delta_marginal
 
     def nodes_complement(self, nodes: list[tuple[int, int]]):
