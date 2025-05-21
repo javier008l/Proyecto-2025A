@@ -46,12 +46,23 @@ class SIA(ABC):
         Método principal sobre el que las clases herederas implementarán su algoritmo de resolución del problema con una metodología determinada.
         """
 
-    def sia_cargar_tpm(self) -> np.ndarray:
-        """Carga TPM desde archivo"""
-        return np.genfromtxt(
+    def sia_cargar_tpm(self, sistema_activo: bool = True) -> np.ndarray:
+        """
+        Carga TPM desde el archivo indicado por el gestor, si el sistema está en off, se niega el dataset.
+
+        Args:
+        ----
+            - `sistema_activo` (bool): Si el sistema está en ON o en OFF, si está en off se niega el dataset.
+        """
+        dataset = np.genfromtxt(
             self.sia_gestor.tpm_filename,
             delimiter=COLON_DELIM,
         )
+        # if not sistema_activo:
+        #     dataset = 
+        print(abs(int(sistema_activo) - dataset))
+
+        return dataset
 
     def sia_preparar_subsistema(
         self,
@@ -86,7 +97,7 @@ class SIA(ABC):
         self.sia_gestor.output_dir.mkdir(parents=True, exist_ok=True)
 
         # Cargar y preparar datos
-        tpm = self.sia_cargar_tpm()
+        tpm = self.sia_cargar_tpm(sistema_activo=False)
         estado_inicial = np.array(
             [canal for canal in self.sia_gestor.estado_inicial], dtype=np.int8
         )

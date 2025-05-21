@@ -104,6 +104,9 @@ def seleccionar_subestado(subestado):
     return notaciones[aplicacion.notacion]
 
 
+def count_bits(n: int) -> int:
+    return bin(n).count("1")
+
 def lil_endian(n: int) -> np.ndarray:
     """
     Implementación final optimizada para generación de little endian.

@@ -209,13 +209,13 @@ class System:
         Los indices asociados a los literales o variables independiente al tiempo son `0:(A|a), 1:(B|b), 2:(C|c)`.
         En el ejemplo se aprecia lo que puede representarse como que el sistema `V={A_abc,B_abc,C_abc}` sufrió una martinalización en `A in (t+1)`, dejando `B` y `C`, sobre los que se aplicó luego una marginalización en `c in (t)`.
         """
-        valid_futures = np.setdiff1d(self.indices_ncubos, alcance_dims)
+        futuros_validos = np.setdiff1d(self.indices_ncubos, alcance_dims)
         new_sys = System.__new__(System)
         new_sys.estado_inicial = self.estado_inicial
         new_sys.ncubos = tuple(
             cube.marginalizar(mecanismo_dims)
             for cube in self.ncubos
-            if cube.indice in valid_futures
+            if cube.indice in futuros_validos
         )
         return new_sys
 
@@ -245,9 +245,9 @@ class System:
         )
         return new_sys
 
-    def distribucion_marginal(self):
+    def distribucion_marginal(self, sistema_en_on: bool = True):
         """
-        Partiendo de idealmente un subsistema o una bipartición como entrada, se seleccionana los nodos/elementos cuando su estado es OFF o inactivo para cada uno de ellos, mediante la propiedad de las distribuciones marginales, esto nos permite calcular más eficientemente la EMD-Effect, logrando así determinar un coste para dar comparación entre idealmente, un sub-sistema y una bipartición. Hemos de aplicar una reversión en la selección del estado inicial puesto
+        Partiendo de idealmente un subsistema o una bipartición como entrada, se seleccionana los nodos/elementos cuando su estado es OFF o inactivo para cada uno de ellos, mediante la propiedad de las distribuciones marginales, esto nos permite calcular más eficientemente la EMD-Effect, logrando así determinar un coste para dar comparación entre idealmente, un sub-sistema y una bipartición. Hemos de aplicar una reversión en la selección del estado inicial puesto se está trabajando con el dataset original.
 
         Returns:
             NDArray[np.float32]: Este arreglo contiene cada elemento/variable de forma ordenada y consecutiva seleccionado específicamente en la clave formada por el estado inicial.
@@ -260,7 +260,7 @@ class System:
             if ncubo.dims.size:
                 sub_estado_inicial = tuple(self.estado_inicial[j] for j in ncubo.dims)
                 probabilidad = ncubo.data[seleccionar_subestado(sub_estado_inicial)]
-            distribuciones[i] = 1 - probabilidad
+            distribuciones[i] = abs(sistema_en_on - probabilidad)
         return distribuciones
 
     def __str__(self) -> str:
