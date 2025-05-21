@@ -58,10 +58,8 @@ class SIA(ABC):
             self.sia_gestor.tpm_filename,
             delimiter=COLON_DELIM,
         )
-        # if not sistema_activo:
-        #     dataset = 
-        print(abs(int(sistema_activo) - dataset))
-
+        if not sistema_activo:
+            dataset = 1 - dataset
         return dataset
 
     def sia_preparar_subsistema(
