@@ -68,6 +68,10 @@ class Geometry(SIA):
             for i, bit in enumerate(self.sia_subsistema.estado_inicial)
             if i in self.sia_subsistema.indices_ncubos
         )
+        print(i_state, self.sia_subsistema.estado_inicial)
+
+        return
+
         # initial_state_dec = int("".join(map(str, initial_state_bin)), 2)
 
         sistema = self.sia_subsistema
