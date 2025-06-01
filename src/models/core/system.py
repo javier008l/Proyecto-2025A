@@ -141,7 +141,7 @@ class System:
 
     def substraer(
         self,
-        alcance_dims: NDArray[np.int8],
+        alcance_idx: NDArray[np.int8],
         mecanismo_dims: NDArray[np.int8],
     ) -> "System":
         """
@@ -208,7 +208,7 @@ class System:
         Los indices asociados a los literales o variables independiente al tiempo son `0:(A|a), 1:(B|b), 2:(C|c)`.
         En el ejemplo se aprecia lo que puede representarse como que el sistema `V={A_abc,B_abc,C_abc}` sufrió una martinalización en `A in (t+1)`, dejando `B` y `C`, sobre los que se aplicó luego una marginalización en `c in (t)`.
         """
-        futuros_validos = np.setdiff1d(self.indices_ncubos, alcance_dims)
+        futuros_validos = np.setdiff1d(self.indices_ncubos, alcance_idx)
         nuevo_sis = System.__new__(System)
         nuevo_sis.estado_inicial = self.estado_inicial
         nuevo_sis.ncubos = tuple(
