@@ -1,17 +1,15 @@
 from src.controllers.manager import Manager
 
-from src.controllers.strategies.phi import Phi
 from src.controllers.strategies.force import BruteForce
-from src.controllers.strategies.geometry import Geometry
 
 
 def iniciar():
     """Punto de entrada principal"""
                     # ABCD #
-    estado_inicial = "1000"
-    condiciones =    "1110"
-    alcance =        "1111"
-    mecanismo =      "1111"
+    estado_inicial = "100"
+    condiciones =    "111"
+    alcance =        "111"
+    mecanismo =      "111"
 
     gestor_sistema = Manager(estado_inicial)
 
