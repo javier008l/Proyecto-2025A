@@ -46,20 +46,14 @@ class SIA(ABC):
         Método principal sobre el que las clases herederas implementarán su algoritmo de resolución del problema con una metodología determinada.
         """
 
-    def sia_cargar_tpm(self, sistema_activo: bool = True) -> np.ndarray:
+    def sia_cargar_tpm(self) -> np.ndarray:
         """
-        Carga TPM desde el archivo indicado por el gestor, si el sistema está en off, se niega el dataset.
-
-        Args:
-        ----
-            - `sistema_activo` (bool): Si el sistema está en ON o en OFF, si está en off se niega el dataset.
+        Carga TPM desde el archivo indicado por el gestor.
         """
         dataset = np.genfromtxt(
             self.sia_gestor.tpm_filename,
             delimiter=COLON_DELIM,
         )
-        if not sistema_activo:
-            dataset = 1 - dataset
         return dataset
 
     def sia_preparar_subsistema(
@@ -67,7 +61,6 @@ class SIA(ABC):
         condicion: str,
         alcance: str,
         mecanismo: str,
-        sistema_activo: bool = True,
     ):
         """Es en este método donde dada la entrada del usuario, vamos a generar un sistema completo, aplicamos condiciones de fondo (background conditions), loe substraemos partes para dejar un subsistema y es este el que retornamos pues este es el mínimo "sistema" útil para poder encontrar la bipartición que le genere la menor pérdida.
 
@@ -96,7 +89,7 @@ class SIA(ABC):
         self.sia_gestor.output_dir.mkdir(parents=True, exist_ok=True)
 
         # Cargar y preparar datos
-        tpm = self.sia_cargar_tpm(sistema_activo)
+        tpm = self.sia_cargar_tpm()
         estado_inicial = np.array(
             [canal for canal in self.sia_gestor.estado_inicial], dtype=np.int8
         )
@@ -119,7 +112,7 @@ class SIA(ABC):
         self.sia_logger.debug(subsistema)
 
         self.sia_subsistema = subsistema
-        self.sia_dists_marginales = subsistema.distribucion_marginal(sistema_activo)
+        self.sia_dists_marginales = subsistema.distribucion_marginal()
         self.sia_tiempo_inicio = time.time()
 
     def chequear_parametros(self, candidato: str, futuro: str, presente: str):
