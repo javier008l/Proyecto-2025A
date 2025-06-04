@@ -1,29 +1,25 @@
 from src.controllers.manager import Manager
 
-from src.controllers.strategies.force import BruteForce
-from src.controllers.strategies.basic import Basic
+from src.strategies.force import BruteForce
 
 
 def iniciar():
     """Punto de entrada principal"""
-    # ABCD #
-    estado_inicial = "100"
-    condiciones = "111"
-    alcance = "111"
-    mecanismo = "111"
+                    # ABCD #
+    estado_inicial = "1000"
+    condiciones =    "1110"
+    alcance =        "1110"
+    mecanismo =      "1110"
 
     gestor_sistema = Manager(estado_inicial)
 
     ### Ejemplo de solución mediante módulo de fuerza bruta ###
-    analizador_phi = Basic(gestor_sistema)
     analizador_bf = BruteForce(gestor_sistema)
 
-    sia_cero = analizador_phi.aplicar_estrategia(
+    sia_cero = analizador_bf.aplicar_estrategia(
         condiciones,
         alcance,
         mecanismo,
     )
 
-    sia_bf = analizador_bf.analizar_completamente_una_red()
     print(sia_cero)
-    print(sia_bf)
