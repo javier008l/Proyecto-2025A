@@ -2,6 +2,7 @@ from src.middlewares.slogger import SafeLogger
 from src.controllers.manager import Manager
 from src.controllers.strategies.q_nodes import QNodes
 
+from src.strategies.force import BruteForce
 
 
 def iniciar():
@@ -77,3 +78,13 @@ def iniciar():
 
 
 
+    ### Ejemplo de solución mediante módulo de fuerza bruta ###
+    analizador_bf = BruteForce(gestor_sistema)
+
+    sia_cero = analizador_bf.aplicar_estrategia(
+        condiciones,
+        alcance,
+        mecanismo,
+    )
+
+    print(sia_cero)
